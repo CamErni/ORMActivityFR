@@ -8,7 +8,7 @@ namespace ORMActivityFR
     {
         public SchoolContext() : base("name=SchoolDBConnectionString")
         {
-            Database.SetInitializer<SchoolContext>(new SchoolDBInitializer());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SchoolContext, ORMActivityFR.Migrations.Configuration>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
